@@ -1,9 +1,11 @@
 import React from 'react';
-import PartyList from './RYUN_WORK/PartyList';
+import Header from './Common/Header';
+import PartyList from './Party/PartyList';
 
 function App() {
   return (
     <>
+      <Header/>
       <PartyList />
     </>
   );
