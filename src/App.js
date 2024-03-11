@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Common/Header';
-import PartyList from './Party/PartyList';
+import Header from './Components/Header/Header';
+import PartyList from './Routes/Party/PartyList';
 
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <PartyList />
     </>
   );
