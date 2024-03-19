@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from '../../asset/REAL_SOOL_LOGO.png'
-import { AppBar, Grid, Toolbar, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import logo from '../../asset/REAL_SOOL_LOGO.png';
+import { AppBar, Box, Grid, Toolbar, Typography, Button } from '@mui/material';
 
 const Header = () => {
   return (
-    <AppBar position="static" style={{ backgroundColor: '#a4134b' }}>
+    <AppBar position="static" style={{ backgroundColor: '#a4134b', width: '100%', margin: 0 }}>
       <Toolbar>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4} lg={7}>
+        <Grid container spacing={2} alignItems="center" style={{ flexWrap: 'nowrap' }}>
+          <Grid item xs={12} sm={6} md={4} lg={6}>
             {/* xs: extra-small devices (모바일)
                 sm: small devices (태블릿)
                 md: medium devices (작은 랩탑)
@@ -20,24 +21,45 @@ const Header = () => {
           </Grid>
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
-            <Button color="inherit">우리술 소개</Button>
+            <Box display="flex" justifyContent="center" width="100%">
+              <Button color="inherit" size="large" component={Link} to="/">
+                우리술 소개
+              </Button>
+            </Box>
           </Grid>
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
-            <Button color="inherit">양조장</Button>
+            <Box display="flex" justifyContent="center" width="100%">
+              <Button color="inherit" size="large" component={Link} to="/#">
+                양조장
+              </Button>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={4} lg={1}>
+            <Box display="flex" justifyContent="center" width="100%">
+              <Button color="inherit" size="large" component={Link} to="/#">
+                우리술 정보
+              </Button>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={4} lg={1}>
+            <Box display="flex" justifyContent="center" width="100%">
+              <Button color="inherit" size="large" component={Link} to="/#">
+                찐들의 모임
+              </Button>
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={4} lg={2}>
+            <Box display="flex" justifyContent="center" width="100%">
+              <Button color="inherit" size="large" component={Link} to="/#">
+                로그인/회원가입
+              </Button>
+            </Box>
           </Grid>
           
-          <Grid item xs={12} sm={6} md={4} lg={1}>
-            <Button color="inherit">우리술 정보</Button>
-          </Grid>
-          
-          <Grid item xs={12} sm={6} md={4} lg={1}>
-            <Button color="inherit">찐들의 모임</Button>
-          </Grid>
-          
-          <Grid item xs={12} sm={6} md={4} lg={1}>
-            <Button color="inherit">로그인/회원가입</Button>
-          </Grid>
         </Grid>
       </Toolbar>
     </AppBar>
