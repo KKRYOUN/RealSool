@@ -22,7 +22,7 @@ const Header = () => {
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
             <Box display="flex" justifyContent="center" width="100%">
-              <Button color="inherit" size="large" component={Link} to="/">
+              <Button color="inherit" size="large" component={Link} to="/about">
                 우리술 소개
               </Button>
             </Box>
@@ -30,7 +30,7 @@ const Header = () => {
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
             <Box display="flex" justifyContent="center" width="100%">
-              <Button color="inherit" size="large" component={Link} to="/#">
+              <Button color="inherit" size="large" component={Link} to="/brewery">
                 양조장
               </Button>
             </Box>
@@ -38,7 +38,7 @@ const Header = () => {
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
             <Box display="flex" justifyContent="center" width="100%">
-              <Button color="inherit" size="large" component={Link} to="/#">
+              <Button color="inherit" size="large" component={Link} to="/sool">
                 우리술 정보
               </Button>
             </Box>
@@ -46,7 +46,7 @@ const Header = () => {
 
           <Grid item xs={12} sm={6} md={4} lg={1}>
             <Box display="flex" justifyContent="center" width="100%">
-              <Button color="inherit" size="large" component={Link} to="/#">
+              <Button color="inherit" size="large" component={Link} to="/party">
                 찐들의 모임
               </Button>
             </Box>
