@@ -6,7 +6,7 @@ import Home from './Routes/Home/Home';
 import About from './Routes/About/About';
 import Brewery from './Routes/Brewery/Brewery';
 import Mypage from './Routes/Mypage/Mypage';
-import PartyList from './Routes/Party/PartyList';
+import Party from './Routes/Party/Party';
 import Sool from './Routes/Sool/Sool';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="/about/*" element={<About />} />
         <Route path="/brewery" element={<Brewery />} />
         <Route path="/mypage" element={<Mypage />} />
-        <Route path="/party" element={<PartyList />} />
+        <Route path="/party/*" element={<Party />} />
         <Route path="/sool" element={<Sool />} />
       </Routes>
       <Footer />
