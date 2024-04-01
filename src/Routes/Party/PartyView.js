@@ -1,9 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 import { styled } from '@mui/system';
 import { useParams } from 'react-router-dom';
 import PartyLsitImage from '../../asset/PartyListImage.jpg';
 import DrinkPartyImage from '../../asset/DrinkPartyIImage.jpg';
-import { Box, Grid, Typography, Card, CardContent, CardMedia, TextField, Button, List, ListItem } from '@mui/material';
+import {
+    Box,
+    Grid,
+    Typography,
+    Card,
+    CardContent,
+    CardMedia,
+    TextField,
+    Button,
+    List,
+    ListItem,
+    Tab
+} from '@mui/material';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
 
 const PartyView = () => {
 
@@ -19,9 +32,10 @@ const PartyView = () => {
     const { partyId } = useParams();
     const partyData = dummyData.find(party => party.num.toString() === partyId);
 
-    if (!partyData) {
-        return <Typography variant="h5">파티 정보를 찾을 수 없습니다.</Typography>;
-    }
+    const [value, setValue] = useState('1');
+    const handleChange = (event, newValue) => { setValue(newValue); };
+
+    if (!partyData) { return <Typography variant="h5">파티 정보를 찾을 수 없습니다.</Typography>; }
 
     const CustomDiv = styled('div')({
         display: 'flex',
@@ -35,6 +49,7 @@ const PartyView = () => {
         width: '100vw',
         margin: '0',
         overflow: 'hidden'
+        // 공용 이미지 컴포넌트화 진행 필요
     });
 
     return (
@@ -49,46 +64,90 @@ const PartyView = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={1} lg={1} />
                     <Grid item xs={10} lg={10}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                height="400"
-                                image={partyData.image}
-                                alt={partyData.title}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5">
-                                    제목 : {partyData.title}
-                                </Typography>
-                                <Typography variant="body1">
-                                    모임 상세 내용 : {partyData.summary}
-                                </Typography>
-                                <Box
-                                    component="form"
-                                    sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' }, mt: 2 }}
-                                    noValidate
-                                    autoComplete="off"
-                                >
-                                    <TextField
-                                        id="outlined-multiline-static"
-                                        label="댓글"
-                                        multiline
-                                        rows={4}
-                                        defaultValue=""
-                                        variant="outlined"
+                        <Grid xs={12} lg={12}>
+                            <Grid container spacing={2} alignItems="center">
+                                <Grid item xs={12} lg={4}>
+                                    <Box
+                                        sx={{
+                                            backgroundImage: `url(${partyData.image})`,
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
+                                            height: 300,
+                                            width: 300,
+                                            my: 4,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            p: 2,
+                                            border: '2px solid grey'
+                                        }}
                                     />
-                                    <Button variant="contained" sx={{ mt: 3 }}>
-                                        댓글 작성
-                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} lg={8}>
+                                    <Card>
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5">
+                                                제목 : {partyData.title}
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                모임 상세 내용 : {partyData.summary}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Grid>
+                            </Grid>
+                            <TabContext value={value}>
+                                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                    <TabList onChange={handleChange} aria-label="lab API tabs example">
+                                        <Tab label="모임 상세 설명" value="1" />
+                                        <Tab label="모임 약관" value="2" />
+                                        <Tab label="모임 문의" value="3" />
+                                        <Tab label="모임 후기" value="4" />
+                                    </TabList>
                                 </Box>
-                                <List>
-                                    <ListItem>
-                                        <Typography variant="subtitle1">사용자1</Typography>
-                                        <Typography variant="body2">댓글 내용이 여기에 들어갑니다.</Typography>
-                                    </ListItem>
-                                </List>
-                            </CardContent>
-                        </Card>
+                                <TabPanel value="1">
+                                    모임 상세 설명
+                                </TabPanel>
+                                <TabPanel value="2">
+                                    모임 약관
+                                </TabPanel>
+                                <TabPanel value="3">
+                                    모임 문의
+                                </TabPanel>
+                                <TabPanel value="4">
+                                    모임 후기
+                                    <Card>
+                                        <CardContent>
+                                            <Box
+                                                component="form"
+                                                sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' }, mt: 2 }}
+                                                noValidate
+                                                autoComplete="off"
+                                            >
+                                                <TextField
+                                                    id="outlined-multiline-static"
+                                                    label="댓글"
+                                                    multiline
+                                                    rows={4}
+                                                    defaultValue=""
+                                                    variant="outlined"
+                                                />
+                                                <Button variant="contained" sx={{ mt: 3 }}>
+                                                    댓글 작성
+                                                </Button>
+                                            </Box>
+                                            <List>
+                                                <ListItem>
+                                                    <Typography variant="subtitle1">사용자1</Typography>
+                                                    <Typography variant="body2">댓글 내용이 여기에 들어갑니다.</Typography>
+                                                </ListItem>
+                                            </List>
+                                        </CardContent>
+                                    </Card>
+                                </TabPanel>
+                            </TabContext>
+                        </Grid>
                     </Grid>
                     <Grid item xs={1} lg={1} />
                 </Grid>
