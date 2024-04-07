@@ -1,0 +1,149 @@
+.product-view {
+    display: flex;
+    justify-content: center;
+    width: 1520px;
+    margin: auto;
+}
+
+.subject {
+    padding: 20px 0 20px 0;
+    font-weight: 500;
+}
+
+.detail {
+    display: flex;
+    padding: 40px 0 40px 0;
+}
+
+.info {
+    align-items: center;
+    padding-left: 45px;
+}
+
+.info-list {
+    margin-top: 30px;
+}
+
+.info-list li {
+    margin-top: 15px;
+}
+
+.info-list li strong {
+    width: 200px;
+}
+
+.info-list li span {
+    position: relative;
+    min-height: 27px;
+    font-size: 18px;
+
+}
+
+.product-view dt {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    color: #222;
+    border-bottom: 1px solid #222;
+    background-color: #f5f5f5;
+}
+
+.product-view dd.detail {
+    border-bottom: 1px solid #b9bec5;
+    background: none;
+}
+
+.product-view dd {
+    padding: 40px 0;
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.product-view dd.detail .info {
+    box-sizing: border-box;
+}
+
+.product-view dd .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-view dd .title span {
+    width: 160px;
+    padding: 9px 0;
+    display: block;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    background: #475566;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.product-view div .title span {
+    width: 160px;
+    padding: 9px 0;
+    display: block;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    background: #475566;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.product-view dd.detail .info-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #515c6f;
+}
+
+.text {
+    padding-left: 28px;
+    display: flex;
+    /* Flexbox를 사용하도록 설정 */
+    justify-content: center;
+    /* 가로 방향으로 중앙 정렬 */
+    align-items: center;
+}
+
+.place .text li strong {
+    display: inline-block;
+    width: 100px;
+}
+
+
+.info-d {
+    width: 150px;
+}
+
+.info-a {
+    display: flex;
+}
+
+.form-select {
+    width: 300px;
+}
+
+.select-group {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+}
+
+.select-loc {
+    padding: 10px 0;
+    font-size: 18px;
+}
