@@ -4,7 +4,8 @@ import { AppBar, Toolbar, Button } from '@mui/material';
 
 const AboutNav = () => {
   return (
-    <AppBar position="static" style={{ margin: '-33px auto 0', backgroundColor: '#a4134b', maxWidth: '75%', alignItems: 'center'}}>
+    <AppBar position="static" style={{ margin: '-33px auto 0', backgroundColor: '#6a4843', maxWidth: '77%', alignItems: 'center'}}>
+    {/* <AppBar position="static" style={{ margin: '-33px auto 0', backgroundColor: 'transparent', maxWidth: '77%', alignItems: 'center'}}> */}
       <Toolbar>
         
         {/* 네비게이션 아이템 */}
