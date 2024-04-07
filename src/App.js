@@ -7,7 +7,7 @@ import About from "./Routes/About/About";
 import Brewery from "./Routes/Brewery/Brewery";
 import Mypage from "./Routes/Mypage/Mypage";
 import Party from "./Routes/Party/Party";
-import Sool from "./Routes/Sool/Sool";
+import Sool from './Routes/Sool/Sool';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/brewery" element={<Brewery />} />
         <Route path="/mypage/*" element={<Mypage />} />
         <Route path="/party/*" element={<Party />} />
-        <Route path="/sool" element={<Sool />} />
+        <Route path="/sool/*" element={<Sool />} />
       </Routes>
       <Footer />
     </>
