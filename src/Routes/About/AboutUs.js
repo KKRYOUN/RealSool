@@ -5,6 +5,8 @@ import { styled } from '@mui/system';
 import introduce01 from './image/introduce01.jpg';
 import introduce02 from './image/introduce02.jpg';
 import introduce03 from './image/introduce03.jpg';
+import background from '../../asset/background.jpg';
+
 
 import AboutNav from './AboutNav';
 
@@ -17,7 +19,7 @@ const AboutUs = () => {
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100% 100%',
     backgroundPosition: 'center',
-    height: '350px',
+    height: '350px'
   });
 
   const firstIntro = [
@@ -28,7 +30,7 @@ const AboutUs = () => {
     { first: '우리는 술에 진심입니다.', second: '우리와 함께 해주시겠습니까?', third: '우리의 전통술이 와인, 위스키 그리고 사케 등 \n 세계적인 술과 어깨를 나란히 하는 꿈을 꿉니다.', fourth: '우리는 한국 전통술에 대한 무한한 애정을 가지고 \n 찐술을 방문해주신 여러분의 손을 마주잡고 이 꿈을 현실로 만들고 싶습니다.' }
   ];
   return (
-    <div>
+    <div style={{backgroundImage: `url(${background})`}}>
       <CustomDiv>
         <Typography variant='h2' color='white' align='center'>
           사이트 소개
@@ -41,35 +43,45 @@ const AboutUs = () => {
       <Container maxWidth='lg'>
         <>
           <Grid container spacing={5}>
-
-            <Grid item xs={8}>
+            <Grid item xs={12} sm={6} md={8} lg={8} >
               {firstIntro.map(line => (
                 <div style={{ color: '#a4134b', padding: '45px 0' }}>
                   <div style={{ lineHeight: '0.8' }}>
-                    <h2 style={{ fontWeight: '400' }}>{line.first}</h2>
-                    <h2>{line.second}</h2>
+                    <Typography variant="h6">
+                      {line.first}
+                    </Typography>
+
+                    <Typography variant="h5" style={{ fontWeight: '600' }}>
+                      {line.second}
+                    </Typography>
                   </div>
 
                   <div style={{ lineHeight: '1', marginTop: '38px', color: 'gray' }}>
                     {line.third.split('\n').map((line, lineIndex) => (
-                      <p key={lineIndex}>{line}</p>
+                      <Typography variant="body1" key={lineIndex}>
+                        {line}
+                      </Typography>
                     ))}
                     <div style={{ marginTop: '30px' }}>
                       {line.fourth.split('\n').map((line, lineIndex) => (
-                        <p key={lineIndex}>{line}</p>
+                        <Typography variant="body1" key={lineIndex}>
+                          {line}
+                        </Typography>
                       ))}
                     </div>
 
                     <div style={{ marginTop: '30px' }}>
                       {line.fifth.split('\n').map((line, lineIndex) => (
-                        <p key={lineIndex}>{line}</p>
+                        <Typography variant="body1" key={lineIndex}>
+                          {line}
+                        </Typography>
                       ))}
                     </div>
                   </div>
                 </div>
               ))}
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={6} md={4} lg={4} >
               <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -80,7 +92,42 @@ const AboutUs = () => {
                 <img className='introduce01' src={introduce01} alt='introduce01' style={{ width: '100%', height: '90%' }} />
               </div>
             </Grid>
-            <Grid item xs={4}>
+          </Grid>
+
+          <Grid container spacing={5}>
+            <Grid item xs={12} sm={6} md={8} lg={8} style={{order: 2}}>
+              {secondIntro.map(line => (
+                <div style={{ padding: '45px 0', alignItems: 'right'}}>
+                  <div style={{ lineHeight: '1', color: '#a4134b' }}>
+                    <Typography variant="h6" style={{ display: 'flex', justifyContent: 'end'}}>
+                      {line.first}
+                    </Typography>
+
+                    <Typography variant="h5" style={{ fontWeight: '600', display: 'flex', justifyContent: 'end' }}>
+                      {line.second}
+                    </Typography>
+                  </div>
+
+                  <div style={{ lineHeight: '1', marginTop: '38px', color: 'gray' }}>
+                    {line.third.split('\n').map((line, lineIndex) => (
+                      <Typography variant="body1" key={lineIndex} style={{ display: 'flex', justifyContent: 'end'}}>
+                        {line}
+                      </Typography>
+                    ))}
+
+                    <div style={{ marginTop: '30px' }}>
+                      {line.fourth.split('\n').map((line, lineIndex) => (
+                        <Typography variant="body1" key={lineIndex} style={{ display: 'flex', justifyContent: 'end'}}>
+                          {line}
+                        </Typography>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={4} lg={4} style={{ order: 1 }} >
               <div style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -91,32 +138,10 @@ const AboutUs = () => {
                 <img className='introduce03' src={introduce03} alt='introduce03' width={'100%'} height={'100%'} />
               </div>
             </Grid>
-            <Grid item xs={8}>
-              {secondIntro.map(line => (
-                <div style={{ padding: '30px 120px' }}>
-                  <div style={{ lineHeight: '1', color: '#a4134b' }}>
-                    <h2 style={{ fontWeight: '400' }}>{line.first}</h2>
-                    <h2>{line.second}</h2>
-                  </div>
-
-                  <div style={{ lineHeight: '1', marginTop: '38px', color: 'gray' }}>
-                    {line.third.split('\n').map((line, lineIndex) => (
-                      <p key={lineIndex}>{line}</p>
-                    ))}
-
-                    <div style={{ marginTop: '30px' }}>
-                      {line.fourth.split('\n').map((line, lineIndex) => (
-                        <p key={lineIndex}>{line}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Grid>
           </Grid>
         </>
       </Container>
-    </div>
+    </div >
 
   );
 };

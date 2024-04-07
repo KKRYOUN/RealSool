@@ -1,14 +1,11 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { Container, Grid, Typography } from '@mui/material';
-import { CardActionArea } from '@mui/material';
+import { Container, Grid, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
 import introduce01 from './image/introduce01.jpg';
 import introduce02 from './image/introduce02.jpg';
 import introduce03 from './image/introduce03.jpg';
+import background from '../../asset/background.jpg';
 import AboutNav from './AboutNav';
 
 const AboutSool = () => {
@@ -41,77 +38,85 @@ const AboutSool = () => {
   ];
 
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${background})` }}>
       <CustomDiv>
         <Typography variant='h2' color='white' align='center'>
           전통주 정의
         </Typography>
       </CustomDiv>
-      
+
       <AboutNav />
 
       <Container maxWidth='lg'>
         <>
-          <Grid container spacing={2} columns={16} style={{marginTop: '10px', justifyContent: 'space-around'}}>
-            <Grid item xs={8}>
-              <Card sx={{ maxWidth: 425 }}>
-                <CardActionArea>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
-                      법적 의미
-                    </Typography>
-                    <CardMedia
-                      component="img"
-                      height="240"
-                      image={introduce01}
-                      alt="법적 의미"
-                    />
-                    <Typography variant="body2" color="text.secondary">
-                      {firstIntro.map(line => (
-                        <div style={{ lineHeight: '1.4' }}>
-                          <h4>{line.first}</h4>
-                          <hr />
-                          <div style={{ lineHeight: '1.5' }}>
-                            <h5>{line.second}</h5>
-                            <h5>{line.third}</h5>
-                            <h5>{line.fourth}</h5>
-                          </div>
-                        </div>
-                      ))
-                      }
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
+          <Grid container spacing={2} columns={12} style={{ marginTop: '10px', justifyContent: 'space-evenly' }}>
+            <Grid item xs={12} sm={10} md={6} lg={6}>
+              <Card style={{ height: '536px' }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
+                    법적 의미
+                  </Typography>
+                  <Box display="flex" justifyContent="center">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    style={{ width : '80%', marginBottom: '26px'}}
+                    image={introduce01}
+                    alt="법적 의미"
+                  />
+                  </Box>
+                  {firstIntro.map(line => (
+                    <div style={{ lineHeight: '1.4', marginTop: '13px' }}>
+                      <Typography variant="body1" color="text.secondary">
+                        {line.first}
+                      </Typography>
+                      <hr />
+                      <div>
+                        <Typography variant="body2" color="text.secondary" style={{ marginTop: '18px' }}>
+                          {line.second}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" style={{ lineHeight: '2'}}>
+                          {line.third}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {line.fourth}
+                        </Typography>
+                      </div>
+                    </div>
+                  ))
+                  }
+                </CardContent>
               </Card>
             </Grid>
 
-            <Grid item xs={6}>
-              <Card sx={{ maxWidth: 425 }}>
-                <CardActionArea>
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
-                      관습적 의미
-                    </Typography>
-                    <CardMedia
-                      component="img"
-                      height="240"
-                      image={introduce03}
-                      alt="관습적 정의"
-                    />
-                    <Typography variant="body2" color="text.secondary">
-                      {secondIntro.map(line => (
-                        <div style={{ lineHeight: '1.5', marginTop: '77px' }}>
-                          <hr />
-                          {line.first.split('\n').map((line) => (
-                            <h5 style={{ margin: 1.2, padding: 0, marginTop: '19px' }}>{line}</h5>
-                          ))}
-                          <h5>{line.second}</h5>
-                        </div>
-                      ))
-                      }
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
+            <Grid item xs={12} sm={10} md={6} lg={6}>
+              <Card style={{ height: '536px' }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
+                    관습적 의미
+                  </Typography>
+                  <Box display="flex" justifyContent="center">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    style={{ width : '80%'}}
+                    image={introduce03}
+                    alt="관습적 정의"
+                  />
+                  </Box>
+                  <Typography variant="body2" color="text.secondary">
+                    {secondIntro.map(line => (
+                      <div style={{ lineHeight: '1.5', marginTop: '71px' }}>
+                        <hr />
+                        {line.first.split('\n').map((line) => (
+                          <h5 style={{ margin: 1.2, padding: 0, marginTop: '19px' }}>{line}</h5>
+                        ))}
+                        <h5>{line.second}</h5>
+                      </div>
+                    ))
+                    }
+                  </Typography>
+                </CardContent>
               </Card>
             </Grid>
           </Grid>
