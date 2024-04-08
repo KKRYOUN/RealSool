@@ -1,9 +1,10 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
-import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, CardMedia, Pagination } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, CardMedia, Pagination, IconButton } from '@mui/material';
 import DrinkPartyImage from '../../asset/DrinkPartyIImage.jpg'
 import PartyLsitImage from '../../asset/PartyListImage.jpg';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 
 const PartyList = () => {
 
@@ -13,12 +14,12 @@ const PartyList = () => {
         justifyContent: 'center',
         backgroundImage: `url(${DrinkPartyImage})`,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover', 
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '350px',
-        width: '100vw', 
-        margin: '0', 
-        overflow: 'hidden' 
+        width: '100vw',
+        margin: '0',
+        overflow: 'hidden'
     });
 
 
@@ -40,7 +41,6 @@ const PartyList = () => {
             </CustomDiv>
             <Container maxWidth="lg">
                 <br /><br /><br />
-                <hr /><hr />
                 <Grid container spacing={2}>
                     <Grid item lg={1} />
                     <Grid item lg={10}>
@@ -76,8 +76,11 @@ const PartyList = () => {
                                 </Grid>
                             ))}
                         </Grid>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', padding: '40px' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3, padding: '40px' }}>
                             <Pagination count={10} variant="outlined" color="primary" />
+                            <IconButton component={Link} to="/party/PartyListWrite" color='primary'>
+                                <EditNoteIcon sx={{ fontSize: 30 }} />
+                            </IconButton>
                         </Box>
                     </Grid>
                     <Grid item lg={1} />

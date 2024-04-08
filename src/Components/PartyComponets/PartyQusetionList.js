@@ -13,7 +13,7 @@ import {
 import ReplyIcon from '@mui/icons-material/Reply';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
-const PartyQusetion = () => {
+const PartyQusetionList = () => {
 
   // 예시 데이터 2 : 댓글 정보
   const comments = [
@@ -68,4 +68,4 @@ const PartyQusetion = () => {
   );
 }
 
-export default PartyQusetion;
+export default PartyQusetionList;

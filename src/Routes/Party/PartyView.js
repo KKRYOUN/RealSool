@@ -6,8 +6,10 @@ import PartyEBackgroundImage from '../../Components/PartyComponets/PartyBackgrou
 import PartyTilte from '../../Components/PartyComponets/PartyTilte';
 import PartyExplain from '../../Components/PartyComponets/PartyExplain';
 import PartyTerms from '../../Components/PartyComponets/PartyTerms';
-import PartyQusetion from '../../Components/PartyComponets/PartyQuestion';
-import PartyReview from '../../Components/PartyComponets/PartyRewiew';
+import PartyQusetionList from '../../Components/PartyComponets/PartyQusetionList';
+import PartyQusetionWrite from '../../Components/PartyComponets/PartyQusetionWrite';
+import PartyReviewList from '../../Components/PartyComponets/PartyReviewList';
+import PartyReviewWrite from '../../Components/PartyComponets/PartyReviewWrite';
 
 
 const PartyView = () => {
@@ -31,6 +33,7 @@ const PartyView = () => {
                                         <Tab label="모임 약관" value="2" />
                                         <Tab label="모임 문의" value="3" />
                                         <Tab label="모임 후기" value="4" />
+                                        <Tab label="모임 후기 작성" value="5" />
                                     </TabList>
                                 </Box>
                                 <TabPanel value="1">
@@ -40,10 +43,14 @@ const PartyView = () => {
                                     <PartyTerms />
                                 </TabPanel>
                                 <TabPanel value="3">
-                                    <PartyQusetion />
+                                    <PartyQusetionWrite />
+                                    <PartyQusetionList />
                                 </TabPanel>
                                 <TabPanel value="4">
-                                    <PartyReview />
+                                    <PartyReviewList setValue={setValue} />
+                                </TabPanel>
+                                <TabPanel value="5">
+                                    <PartyReviewWrite />
                                 </TabPanel>
                             </TabContext>
                         </Grid>

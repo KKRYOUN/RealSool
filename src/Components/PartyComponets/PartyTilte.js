@@ -32,7 +32,7 @@ const PartyTilte = () => {
   return (
     <>
       <Grid container spacing={1} alignItems="center">
-        <Grid item xs={12} md={6} lg={3}>
+        <Grid item xs={12} sm={12} md={12} lg={4}>
           <Box
             sx={{
               backgroundImage: `url(${partyData.image})`,
@@ -50,7 +50,7 @@ const PartyTilte = () => {
             }}
           />
         </Grid>
-        <Grid item xs={12} md={6} lg={9}>
+        <Grid item xs={12} sm={12} md={12} lg={8}>
           <Card>
             <CardHeader
               title={`제목: ${partyData.title}`}

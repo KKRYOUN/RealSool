@@ -18,7 +18,7 @@ import ReplyIcon from '@mui/icons-material/Reply';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
-const PartyReview = () => {
+const PartyReviewList = ({ setValue }) => {
 
   // 예시 데이터 2 : 댓글 정보
   const comments = [
@@ -38,6 +38,9 @@ const PartyReview = () => {
     2: 50,
     1: 5
   };
+
+  // 후기 작성 버튼을 누르면 후기 작성 탭 메뉴로 이동
+  const handleWriteReviewClick = () => { setValue('5'); };
 
   const totalReviews = Object.values(ratingDistribution).reduce((a, b) => a + b, 0);
   const averageRating = Object.entries(ratingDistribution).reduce((total, [rating, count]) => total + parseInt(rating) * count, 0,) / totalReviews;
@@ -74,8 +77,8 @@ const PartyReview = () => {
 
           {/* 댓글 작성 버튼 영역 */}
           <Grid item xs={4} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-            <Button variant="outlined" startIcon={<StarBorderIcon />} sx={{ my: 2 }}>
-              댓글 작성
+            <Button variant="outlined" startIcon={<StarBorderIcon />} sx={{ my: 2 }} onClick={handleWriteReviewClick}  >
+              후기 작성
             </Button>
           </Grid>
         </Grid>
@@ -121,4 +124,4 @@ const PartyReview = () => {
   );
 };
 
-export default PartyReview;
+export default PartyReviewList;
