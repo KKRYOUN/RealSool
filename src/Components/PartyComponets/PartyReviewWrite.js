@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, Rating } from '@mui/material';
+import { Box, TextField, Button, Tooltip, Typography, Rating } from '@mui/material';
 
 const PartyReviewWrite = () => {
   const [comment, setComment] = useState('');
@@ -46,11 +46,21 @@ const PartyReviewWrite = () => {
       autoComplete="off"
     >
       <Typography component="legend">모임에 대한 당신의 경험을 적어주세요~!</Typography>
-      <Rating
-        name="simple-controlled"
-        value={rating}
-        onChange={handleRatingChange}
-      />
+      <Box
+        sx={{
+          display: 'flex',
+          width: 240,
+          m: 1
+        }}
+      >
+        <Tooltip title='원하는 별점이 있는 곳에 마우스 커서를 갖다 놓으세요'>
+          <Rating
+            name="simple-controlled"
+            value={rating}
+            onChange={handleRatingChange}
+          />
+        </Tooltip>
+      </Box>
       <TextField
         label="Review"
         multiline
