@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import AboutUs from './AboutUs';
 import AboutSool from './AboutSool';
 import AboutCategory from './AboutCategory';
 
 const About = () => {
-
   return (
     <>
     <Routes>

@@ -37,9 +37,8 @@ const AboutUs = () => {
         </Typography>
       </CustomDiv>
 
-      <>
         <AboutNav />
-      </>
+        
       <Container maxWidth='lg'>
         <>
           <Grid container spacing={5}>

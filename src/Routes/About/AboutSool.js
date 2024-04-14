@@ -47,11 +47,11 @@ const AboutSool = () => {
 
       <AboutNav />
 
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' style={{height: '600px '}}>
         <>
           <Grid container spacing={2} columns={12} style={{ marginTop: '10px', justifyContent: 'space-evenly' }}>
             <Grid item xs={12} sm={10} md={6} lg={6}>
-              <Card style={{ height: '536px' }}>
+              <Card style={{ height: '530px', backgroundColor: '#eee' }}>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
                     법적 의미
@@ -90,7 +90,7 @@ const AboutSool = () => {
             </Grid>
 
             <Grid item xs={12} sm={10} md={6} lg={6}>
-              <Card style={{ height: '536px' }}>
+              <Card style={{ height: '530px', backgroundColor: '#eee' }}>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" style={{ color: '#a4134b', fontWeight: '600' }}>
                     관습적 의미
