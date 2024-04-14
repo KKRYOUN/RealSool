@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Link } from 'react-router-dom';
-import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, CardMedia, Pagination, IconButton } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, CardActions, Button, CardMedia, Pagination, IconButton, Tooltip } from '@mui/material';
 import DrinkPartyImage from '../../asset/DrinkPartyIImage.jpg'
 import PartyLsitImage from '../../asset/PartyListImage.jpg';
 import EditNoteIcon from '@mui/icons-material/EditNote';
@@ -78,9 +78,11 @@ const PartyList = () => {
                         </Grid>
                         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 3, padding: '40px' }}>
                             <Pagination count={10} variant="outlined" color="primary" />
-                            <IconButton component={Link} to="/party/PartyListWrite" color='primary'>
-                                <EditNoteIcon sx={{ fontSize: 30 }} />
-                            </IconButton>
+                            <Tooltip title="모임작성하기">
+                                <IconButton component={Link} to="/party/PartyListWrite" color='primary'>
+                                    <EditNoteIcon sx={{ fontSize: 30 }} />
+                                </IconButton>
+                            </Tooltip>
                         </Box>
                     </Grid>
                     <Grid item lg={1} />

@@ -24,9 +24,7 @@ const PartyReviewWrite = () => {
   };
 
   const handleSubmit = () => {
-    // 댓글, 이름, 이메일, 별점 제출 로직 처리
     console.log({ comment, name, email, rating });
-    // 이곳에 서버로 데이터를 전송하는 코드를 추가합니다.
     setComment('');
     setName('');
     setEmail('');
